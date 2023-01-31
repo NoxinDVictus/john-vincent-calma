@@ -26,12 +26,12 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 run:
 `$ yarn prettier` > make your code consistent
-`$ yarn build` > check if your PR has no issues
+`$ yarn build` > check if your PR has no issues (done automatically by husky)
 
 #### Make your code Clean and Readable
 
 - **Delete all codes that you will not be using**, including imports and commented codes. Codes that are commented and included on the push should have a reason. [One Possible Reason](https://blog.codinghorror.com/the-joy-of-deletion/)
-- **Follow Proper Function Documentation** [JSDoc summary](https://gomakethings.com/whats-the-best-way-to-document-javascript/)
+- **Follow Proper Function Documentation** [JSDoc summary](https://gomakethings.com/whats-the-best-way-to-document-javascript/) or [TSDOc](https://tsdoc.org/)
 - For complex function please put details as much as possible for other dev to know what it’s used for and how to use it .
 - Since we are using TS please do add a type on your variables as much as possible, **don’t just use ‘any’**. Create an interface, class, enum or type if necessary.
 - We will use SASS so as much as possible don’t save using the extension .css, for consistency.
@@ -148,10 +148,3 @@ main.scss
     robots.txt
     manifest.json
 ```
-
-#### Setting Up the Environment
-
-1. Download the code on the official repo.
-2. Get into the root folder and open your terminal and do yarn, this will build and download all the necessary files and dependencies.
-3. For the env files, you need to message the project manager or the CTO to get access to it since it's a very important files. Once you do have the env files create a folder on the root directory named `.env` and do a copy-paste.
-4. To run on the project follow the steps of this file's intro.
