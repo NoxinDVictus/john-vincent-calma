@@ -2,10 +2,13 @@
 
 @import './abstract/helpers';
 @import './abstract/general';
+@import './abstract/loading';
 
 body {
   font-family: 'Quicksand', sans-serif;
   font-size: 14px;
+  margin: 0;
+  padding: 0;
 }
 
 .center {

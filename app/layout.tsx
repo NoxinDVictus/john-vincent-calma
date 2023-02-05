@@ -1,6 +1,7 @@
-import '../styles/index.scss';
+import { I } from '@/interfaces';
+import '@/styles/index.scss';
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: I.Layout): JSX.Element {
   return (
     <html lang="en">
       {/*
