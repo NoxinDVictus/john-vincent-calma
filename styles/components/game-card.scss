@@ -1,0 +1,144 @@
+.game-card {
+  display: flex;
+
+  .container {
+    width: 328px;
+    height: 480px;
+    -webkit-perspective: 1500;
+
+    &:hover .card {
+      transform: rotateY(180deg);
+    }
+  }
+
+  .card,
+  .front,
+  .back {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  .card {
+    position: relative;
+    transition: transform 1.5s;
+    transform-style: preserve-3d;
+    background-image: url('/assets/images/yu-gi-oh-back-card.webp');
+  }
+
+  .front,
+  .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+  }
+
+  .front {
+    overflow: hidden;
+  }
+
+  .back {
+    transform: rotateY(180deg);
+  }
+
+  .back-card {
+    background: #708090;
+    border-radius: 5px;
+    border: 10px solid gold;
+    height: 460px;
+    width: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+
+    &__tittle-bar {
+      align-items: center;
+      background-color: white;
+      display: flex;
+      height: 40px;
+      justify-content: space-between;
+      margin-top: 10px;
+      width: 80%;
+      border-radius: 5px;
+      box-shadow: inset 0 0 5px 5px gold;
+
+      p {
+        font-weight: 600;
+        margin-left: 10px;
+      }
+
+      .icon {
+        margin-right: 10px;
+      }
+    }
+
+    &__image {
+      height: 230;
+      width: 80%;
+
+      img {
+        border: 9px solid gold;
+      }
+    }
+
+    &__information {
+      height: 70px;
+      width: 77%;
+      border: 5px solid gold;
+      position: relative;
+      text-align: center;
+
+      .corners {
+        height: 10px;
+        width: 10px;
+        background-color: #c3ced6;
+        position: absolute;
+
+        &--top-left {
+          top: -5px;
+          left: -5px;
+        }
+
+        &--top-right {
+          top: -5px;
+          right: -5px;
+        }
+
+        &--bottom-left {
+          bottom: -5px;
+          left: -5px;
+        }
+
+        &--bottom-right {
+          bottom: -5px;
+          right: -5px;
+        }
+      }
+
+      q {
+        font-size: 10px;
+        font-style: italic;
+        font-weight: 600;
+      }
+
+      .power {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0 10px 10px 0;
+
+        p {
+          margin: 0;
+          padding: 0;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  .round {
+    border-radius: 50%;
+  }
+}
