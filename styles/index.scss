@@ -1,5 +1,8 @@
 @import './components/index.scss';
 
+@import './abstract/helpers';
+@import './abstract/general';
+
 body {
   font-family: 'Quicksand', sans-serif;
   font-size: 14px;

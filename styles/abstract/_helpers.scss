@@ -1,0 +1,228 @@
+@use './colors' as color;
+
+@for $i from 1 through 1000 {
+  .text-#{$i} {
+    font-size: #{$i}px;
+  }
+
+  .round-#{$i} {
+    border-radius: #{$i}px;
+  }
+
+  .round-#{$i}-p {
+    border-radius: #{$i + '%'};
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Clamp helpers
+// -----------------------------------------------------------------------------------------------------
+@for $lines from 1 through 20 {
+  .clamp-#{$lines} {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: #{$lines};
+    -webkit-box-orient: vertical;
+  }
+}
+
+$colorNames: (
+  'black-100': var(--black-100),
+  'red-100': var(--red-100),
+  'white-100': var(--white-100),
+);
+
+// -----------------------------------------------------------------------------------------------------
+// @ color  helpers
+// -----------------------------------------------------------------------------------------------------
+@each $name, $color in $colorNames {
+  // selector based on name
+  .color-#{$name} {
+    color: $color !important;
+  }
+
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Size helpers
+// -----------------------------------------------------------------------------------------------------
+@each $prop, $abbrev in (height: h, width: w) {
+  @for $index from 0 through 100 {
+    .#{$abbrev}-#{$index} {
+      #{$prop}: #{$index}px;
+    }
+  }
+
+  // Percentage
+  @for $i from 0 through 100 {
+    .#{$abbrev}-#{$i}-p {
+      #{$prop}: #{$i + '%'};
+    }
+
+    .#{$abbrev}-#{$i}-vh {
+      #{$prop}: #{$i + 'vh'};
+    }
+
+    .#{$abbrev}-#{$i}-vw {
+      #{$prop}: #{$i + 'vw'};
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Spacing helpers
+// -----------------------------------------------------------------------------------------------------
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @for $index from 0 through 100 {
+    .#{$abbrev}-#{$index} {
+      #{$prop}: #{$index}px;
+    }
+
+    .#{$abbrev}-#{$index}-p {
+      #{$prop}: #{$index + '%'};
+    }
+  }
+
+  @for $index from 0 through 100 {
+    .#{$abbrev}x-#{$index} {
+      #{$prop}-right: #{$index}px;
+      #{$prop}-left: #{$index}px;
+    }
+
+    .#{$abbrev}x-#{$index}-p {
+      #{$prop}-right: #{$index + '%'};
+      #{$prop}-left: #{$index + '%'};
+    }
+
+    .#{$abbrev}y-#{$index} {
+      #{$prop}-top: #{$index}px;
+      #{$prop}-bottom: #{$index}px;
+    }
+
+    .#{$abbrev}y-#{$index}-p {
+      #{$prop}-right: #{$index + '%'};
+      #{$prop}-left: #{$index + '%'};
+    }
+
+    // Negative Margins
+    @if ($abbrev==m) {
+      .#{$abbrev}x-#{$index}-neg {
+        #{$prop}-right: -#{$index}px;
+        #{$prop}-left: -#{$index}px;
+      }
+
+      .#{$abbrev}y-#{$index}-neg {
+        #{$prop}-top: -#{$index}px;
+        #{$prop}-bottom: -#{$index}px;
+      }
+    }
+  }
+
+  @for $index from 0 through 100 {
+    .#{$abbrev}t-#{$index} {
+      #{$prop}-top: #{$index}px;
+    }
+
+    .#{$abbrev}t-#{$index}-p {
+      #{$prop}-top: #{$index + '%'};
+    }
+
+    .#{$abbrev}r-#{$index} {
+      #{$prop}-right: #{$index}px;
+    }
+
+    .#{$abbrev}r-#{$index}-p {
+      #{$prop}-right: #{$index + '%'};
+    }
+
+    .#{$abbrev}b-#{$index} {
+      #{$prop}-bottom: #{$index}px;
+    }
+
+    .#{$abbrev}b-#{$index}-p {
+      #{$prop}-bottom: #{$index + '%'};
+    }
+
+    .#{$abbrev}l-#{$index} {
+      #{$prop}-left: #{$index}px;
+    }
+
+    .#{$abbrev}l-#{$index}-p {
+      #{$prop}-left: #{$index + '%'};
+    }
+
+    // Negative Margins
+    @if ($abbrev==m) {
+      .#{$abbrev}t-#{$index}-neg {
+        #{$prop}-top: -#{$index}px;
+      }
+
+      .#{$abbrev}r-#{$index}-neg {
+        #{$prop}-right: -#{$index}px;
+      }
+
+      .#{$abbrev}b-#{$index}-neg {
+        #{$prop}-bottom: -#{$index}px;
+      }
+
+      .#{$abbrev}l-#{$index}-neg {
+        #{$prop}-left: -#{$index}px;
+      }
+    }
+  }
+
+  @if ($abbrev==m) {
+    // Some special margin utils for flex alignments
+    .m-auto {
+      margin: auto !important;
+    }
+
+    .mt-auto {
+      margin-top: auto !important;
+    }
+
+    .mr-auto {
+      margin-right: auto !important;
+    }
+
+    .mb-auto {
+      margin-bottom: auto !important;
+    }
+
+    .ml-auto {
+      margin-left: auto !important;
+    }
+
+    .mx-auto {
+      margin-right: auto !important;
+      margin-left: auto !important;
+    }
+
+    .my-auto {
+      margin-top: auto !important;
+      margin-bottom: auto !important;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ position helpers
+// -----------------------------------------------------------------------------------------------------
+@each $prop, $abbrev in (top: top, left: left, right: right, bottom: bottom) {
+  @for $index from 0 through 100 {
+    .#{$abbrev}-#{$index} {
+      #{$prop}: #{$index}px;
+    }
+  }
+
+  // Percentage
+  @for $i from 0 through 100 {
+    .#{$abbrev}-#{$i}-p {
+      #{$prop}: #{$i + '%'};
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.flex {
+  display: flex;
+}
+
+$directions: (
+  'row': row,
+  'row-reverser': row-reverse,
+  'col': column,
+  'col-reverser': column-reverse,
+);
+
+@each $name, $direction in $directions {
+  .flex-#{$name} {
+    flex-direction: $direction;
+  }
+}
+
+$positions: (
+  'absolute': absolute,
+  'relative': relative,
+);
+
+@each $name, $position in $positions {
+  .#{$name} {
+    position: $position;
+  }
+}
+
+$var-justify: (
+  'center': center,
+  'around': space-around,
+  'evenly': space-evenly,
+  'between': space-between,
+);
+
+@each $name, $position in $var-justify {
+  .justify-#{$name} {
+    justify-content: $position;
+  }
+}
+
+$var-items: (
+  'center': center,
+  'start': start,
+  'end': end,
+);
+
+@each $name, $position in $var-items {
+  .items-#{$name} {
+    align-items: $position;
+  }
+}
