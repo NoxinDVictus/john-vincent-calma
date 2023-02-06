@@ -50,3 +50,31 @@ $var-items: (
     align-items: $position;
   }
 }
+
+$text-align: (
+  'center': center,
+  'left': left,
+  'right': right,
+);
+
+@each $name, $position in $text-align {
+  .text-#{$name} {
+    text-align: $position;
+  }
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.h-screen {
+  height: 100vh;
+}

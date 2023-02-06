@@ -38,7 +38,7 @@ $colorNames: (
 // -----------------------------------------------------------------------------------------------------
 @each $name, $color in $colorNames {
   // selector based on name
-  .color-#{$name} {
+  .text-#{$name} {
     color: $color !important;
   }
 

@@ -1,0 +1,26 @@
+.not-found {
+  overflow: hidden;
+  user-select: none;
+
+  .info {
+    p {
+      font-style: italic;
+    }
+  }
+
+  .star {
+    position: absolute;
+  }
+
+  @for $i from 1 through 100 {
+    .blink-#{$i} {
+      animation: blinker #{$i} + s linear infinite;
+    }
+  }
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+}
