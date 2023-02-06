@@ -1,4 +1,4 @@
-import { IMAGES, LOGOS } from '@/constants/media.constant';
+import { IMAGES, LOGOS } from '@/shared/media.constant';
 import Image from 'next/image';
 
 function GameCard(): JSX.Element {

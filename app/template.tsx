@@ -1,4 +1,4 @@
-import { I } from '@/interfaces';
+import { I } from '@/shared/interfaces';
 
 export default function Template({ children }: I.Layout): JSX.Element {
   return <div className="head-template">{children}</div>;

@@ -1,4 +1,4 @@
-import { I } from '@/interfaces';
+import { I } from '@/shared/interfaces';
 import '@/styles/index.scss';
 
 export default function RootLayout({ children }: I.Layout): JSX.Element {
