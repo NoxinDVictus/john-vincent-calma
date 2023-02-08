@@ -7,6 +7,8 @@ export const IMAGES = {
   ME: `${images}/me.jpeg`,
 };
 
-export const LOGOS = {
+export const LOGO = {
   VERCEL: `${logos}/vercel.png`,
+  BLACK: `${logos}/logo-black.svg`,
+  WHITE: `${logos}/logo-white.svg`,
 };
