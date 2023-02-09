@@ -1,3 +1,5 @@
+// NOTE this are the things to be deleted when tailwind is fixed
+
 .flex {
   display: flex;
 }
@@ -72,6 +74,34 @@ $cursors: (
 @each $name, $cursor in $cursors {
   .cursor-#{$name} {
     cursor: $cursor;
+  }
+}
+
+$f-weights: (
+  'thin': 100,
+  'extralight': 200,
+  'light': 300,
+  'normal': 400,
+  'medium': 500,
+  'semibold': 600,
+  'bold': 700,
+  'extrabold': 800,
+  'black': 900,
+);
+
+@each $name, $f-weight in $f-weights {
+  .font-#{$name} {
+    font-weight: $f-weight;
+  }
+}
+
+$f-style: (
+  'italic': italic,
+);
+
+@each $name, $f-style in $f-style {
+  .#{$name} {
+    font-style: $f-style;
   }
 }
 
