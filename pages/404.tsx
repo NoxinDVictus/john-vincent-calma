@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import uuid from 'react-uuid';
 
 export default function NotFound(): JSX.Element {
-  let stars = new Array(1000);
+  let stars = new Array(500);
   stars = stars.fill(0).map(() => Math.floor(Math.random() * 10));
 
   // TODO add a floating astronaut
@@ -20,18 +20,21 @@ export default function NotFound(): JSX.Element {
           </p>
         </div>
 
-        {stars.map((e) => (
-          <span
-            className={clsx(
-              'absolute',
-              `top-${random()}-p bottom-${random()}-p left-${random()}-p right-${random()}-p`,
-              `blink-${random(10)}`,
-            )}
-            key={uuid()}
-          >
-            <Star dimension={e} />
-          </span>
-        ))}
+        <div className="relative h-screen w-screen">
+          {stars.map((e) => (
+            <span
+              className={clsx(
+                'absolute center',
+                `top-${random()}-p bottom-${random()}-p left-${random()}-p right-${random()}-p`,
+                `blink-${random(10)}`,
+                `w-${e} h-${e}`,
+              )}
+              key={uuid()}
+            >
+              <Star dimension={e} />
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
