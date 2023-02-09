@@ -1,5 +1,15 @@
+import Footer from '@/shared/components/layout/footer';
+import Header from '@/shared/components/layout/header';
 import { I } from '@/shared/interfaces';
 
 export default function Template({ children }: I.Layout): JSX.Element {
-  return <div className="head-template">{children}</div>;
+  return (
+    <>
+      <Header />
+
+      <div>{children}</div>
+
+      <Footer />
+    </>
+  );
 }

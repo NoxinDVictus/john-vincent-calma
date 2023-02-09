@@ -18,6 +18,7 @@ $directions: (
 $positions: (
   'absolute': absolute,
   'relative': relative,
+  'fixed': fixed,
 );
 
 @each $name, $position in $positions {
@@ -60,6 +61,17 @@ $text-align: (
 @each $name, $position in $text-align {
   .text-#{$name} {
     text-align: $position;
+  }
+}
+
+$cursors: (
+  'pointer': pointer,
+  'not-allowed': not-allowed,
+);
+
+@each $name, $cursor in $cursors {
+  .cursor-#{$name} {
+    cursor: $cursor;
   }
 }
 

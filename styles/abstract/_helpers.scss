@@ -12,6 +12,18 @@
   .round-#{$i}-p {
     border-radius: #{$i + '%'};
   }
+
+  .gap-#{$i} {
+    gap: #{$i}px;
+  }
+
+  .gap-y-#{$i} {
+    row-gap: #{$i}px;
+  }
+
+  .gap-x-#{$i} {
+    column-gap: #{$i}px;
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -31,19 +43,21 @@ $colorNames: (
   'black-100': var(--black-100),
   'red-100': var(--red-100),
   'white-100': var(--white-100),
+  'blue-100': var(--blue-100),
+  'blue-200': var(--blue-200),
+  'transparent': transparent,
 );
 
 // -----------------------------------------------------------------------------------------------------
 // @ color  helpers
 // -----------------------------------------------------------------------------------------------------
 @each $name, $color in $colorNames {
-  // selector based on name
   .text-#{$name} {
-    color: $color !important;
+    color: $color;
   }
 
   .bg-#{$name} {
-    background-color: $color !important;
+    background-color: $color;
   }
 }
 
@@ -88,19 +102,9 @@ $colorNames: (
   }
 
   @for $index from 0 through 100 {
-    .#{$abbrev}x-#{$index} {
+    .#{$abbrev}y-#{$index} {
       #{$prop}-right: #{$index}px;
       #{$prop}-left: #{$index}px;
-    }
-
-    .#{$abbrev}x-#{$index}-p {
-      #{$prop}-right: #{$index + '%'};
-      #{$prop}-left: #{$index + '%'};
-    }
-
-    .#{$abbrev}y-#{$index} {
-      #{$prop}-top: #{$index}px;
-      #{$prop}-bottom: #{$index}px;
     }
 
     .#{$abbrev}y-#{$index}-p {
@@ -108,14 +112,24 @@ $colorNames: (
       #{$prop}-left: #{$index + '%'};
     }
 
+    .#{$abbrev}x-#{$index} {
+      #{$prop}-top: #{$index}px;
+      #{$prop}-bottom: #{$index}px;
+    }
+
+    .#{$abbrev}x-#{$index}-p {
+      #{$prop}-right: #{$index + '%'};
+      #{$prop}-left: #{$index + '%'};
+    }
+
     // Negative Margins
     @if ($abbrev==m) {
-      .#{$abbrev}x-#{$index}-neg {
+      .#{$abbrev}y-#{$index}-neg {
         #{$prop}-right: -#{$index}px;
         #{$prop}-left: -#{$index}px;
       }
 
-      .#{$abbrev}y-#{$index}-neg {
+      .#{$abbrev}x-#{$index}-neg {
         #{$prop}-top: -#{$index}px;
         #{$prop}-bottom: -#{$index}px;
       }

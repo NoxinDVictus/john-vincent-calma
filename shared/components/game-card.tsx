@@ -1,4 +1,4 @@
-import { IMAGES, LOGOS } from '@/shared/media.constant';
+import { IMAGES, LOGO } from '@/shared/media.constant';
 import Image from 'next/image';
 
 function GameCard(): JSX.Element {
@@ -22,7 +22,7 @@ function FrontCard(): JSX.Element {
       <div className="back-card__tittle-bar">
         <p>John Vincent Calma</p>
         <div className="icon center">
-          <Image width={20} height={20} src={LOGOS.VERCEL} alt="Card Image" className="round" />
+          <Image width={20} height={20} src={LOGO.VERCEL} alt="Card Image" className="round" />
         </div>
       </div>
 
